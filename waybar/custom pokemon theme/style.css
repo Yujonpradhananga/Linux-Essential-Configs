@@ -1,0 +1,122 @@
+* {
+    border: none;
+    min-height: 0;
+    font-family: "GohuFont 11 Nerd Font Propo";
+    font-weight: 500;
+    font-size: 15px;
+    padding: 0;
+    border-radius: 8px;
+}
+
+window#waybar {
+    background-color: transparent;
+    border: none;
+    border-radius: 0px 25px 25px 0px;
+}
+
+/* Left side - Workspaces container with cylindrical shape */
+#workspaces {
+    background-color: #A855F7;
+    border: 3px solid #7C2D92;
+    border-radius: 0px 25px 25px 0px;
+    margin: 6px 0px 6px 12px;
+    padding: 4px 30px 4px 4px;
+}
+
+#workspaces button {
+    min-width: 24px;
+    min-height: 24px;
+    padding: 1px;
+    margin: 0px 3px 0px 0px;
+    background-color: #7C2D92;
+    border: 1px solid #4A1A5A;
+    border-top: 2px solid #9F4FB8;
+    border-left: 2px solid #9F4FB8;
+    border-radius: 100px;
+    transition: 150ms;
+    color: #7C2D92;
+    font-size: 10px;
+}
+
+#workspaces button.active {
+    background-image: linear-gradient(to top,#FFFFFF,#D1D5DB);
+    border: 2px solid #D1D5DB;
+    border-top: 2px solid #F9FAFB;
+    border-left: 2px solid #F9FAFB;
+}
+
+#workspaces button:hover {
+    background-color: #A855F7;
+    border: 2px solid #6B21A8;
+    border-top: 2px solid #C084FC;
+    border-left: 2px solid #C084FC;
+}
+
+#workspaces button.urgent {
+    background-color: #EF4444;
+    border: 2px solid #DC2626;
+    color: #FFFFFF;
+}
+
+/* Center clock */
+#clock {
+    background-color: #FFD700;
+    background-image: linear-gradient(to bottom, #FFD700, #FFA000);
+    border: 3px solid #FF8F00;
+    color: #0f2419;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 30px;
+    margin: 6px 0px;
+}
+
+#clock:hover {
+    box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
+}
+
+/* Right side - Simple module indicators */
+#memory,
+#battery,
+#backlight,
+#pulseaudio {
+    background-color: transparent;
+    border: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 6px 8px 6px 0px;
+    padding: 8px 6px;
+}
+
+#memory:hover,
+#battery:hover,
+#backlight:hover,
+#pulseaudio:hover {
+    color: #FCD34D;
+}
+
+#pulseaudio {
+    margin-right: 12px;
+}
+
+/* States */
+#memory.critical {
+    color: #EF4444;
+}
+
+#battery.charging {
+    color: #10B981;
+}
+
+#battery.warning {
+    color: #F59E0B;
+}
+
+#battery.critical,
+#battery.urgent {
+    color: #EF4444;
+}
+
+#pulseaudio.muted {
+    color: #9CA3AF;
+}

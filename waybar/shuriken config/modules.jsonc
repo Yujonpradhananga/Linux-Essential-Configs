@@ -1,0 +1,90 @@
+{
+	"hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "all-outputs": true,
+        "format-icons": {
+        "default": "󰫣 ",
+        "active": "󰫢 "
+		}
+	},
+
+  "custom/nowplaying": {
+    "format": "{}",
+    "max-length": 50,
+    "interval": 5,
+    "escape": true,
+    "exec": "~/.config/waybar/scripts/nowPlaying.sh",
+    "on-click": "~/.config/waybar/scripts/playtoggle.sh"
+  },
+	"clock": {
+		"format": "{:%I:%M %p}",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"on-click": "swaync-client -t",
+		"calendar": {
+			"format": {
+				"months": "<span color='#ffead3'><b>{}</b></span>",
+				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+				"today": "<span color='#ffcc66'><b><u>{}</u></b></span>"
+			}
+		}
+	},
+
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 20
+		},
+		"format": "{icon} {capacity}",
+        "format-charging": " {capacity}",
+          "format-plugged": " {capacity}",
+		"format-alt": "{time}   {icon}",
+		"format-icons": ["󰂎", "󰁼", "󰂀",  "󰁹"],
+	},
+
+	"network": {
+		"format-wifi": "  {signalStrength}%",
+		"format-ethernet": "{ipaddr}/{cidr}",
+		"format-linked": "{ifname} (No IP)",
+		"format-disconnected": "󰖪 ",
+        "on-click": "exec ~/.config/rofi/assets/wifimenu --rofi -s",
+        "tooltip-format":"Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({bandwidthDownBytes})</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>"	
+    },
+
+	"bluetooth": {
+		"format": "󰂯 {status}",
+		"format-disabled": " off",
+		"format-connected": " {num_connections}",
+		"tooltip-format": "{device_alias}",
+		"tooltip-format-connected": " {device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}",
+		"on-click": "kitty -e bluetui"
+	},
+
+
+    "memory": {
+        "interval": 120,
+        "format": "󰍛 {percentage}%",
+        "tooltip-format": "Memory: {used:0.1f}G/{total:0.1f}G\nSwap: {swapUsed:0.1f}G/{swapTotal:0.1f}G",
+        "max-length": 50
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "max-volume": 100,
+        "format": " {volume}%",
+        "format-bluetooth": "vol {volume}%",
+        "nospacing": 1,
+        "on-click": "pwvucontrol",
+        "tooltip": false
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "tooltip-format": "Brightness: {percent}%",
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-"
+    }
+}

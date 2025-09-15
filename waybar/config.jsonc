@@ -1,0 +1,88 @@
+{
+    "layer": "top",
+    "modules-left": [
+        "hyprland/workspaces",
+		    "custom/right-arrow-dark",
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "memory",
+        "battery",
+        "backlight",
+        "pulseaudio"
+    ],
+	  "custom/left-arrow-dark": {
+		  "format": "",
+		  "tooltip": false
+	  },
+    "custom/left-arrow-light": {
+      "format": "",
+      "tooltip": false
+    },
+    "custom/right-arrow-dark": {
+      "format": " ",
+      "tooltip": false
+    },
+    "custom/right-arrow-light": {
+      "format": "",
+      "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "format": "{name}",
+    },
+
+    "clock": {
+        "format": "{:%H:%M-%a,%d %b %Y}",
+        "tooltip":false
+    },
+
+    "memory": {
+        "format": " {percentage}%",
+        "interval": 1,
+        "states": {
+            "critical": 80
+        }
+    },
+    "battery": {
+      "states": {
+        "good": 95,
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "󰃞 {percent}%",
+        "scroll-step": 5,
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "tooltip": false
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume:2}%",
+      "format-bluetooth": "{icon}  {volume}%",
+      "format-muted": "MUTE",
+      "format-icons": {
+        "headphones": "",
+        "default": [
+          "",
+          ""
+        ]
+      },
+      "scroll-step": 5,
+      "on-click": "pamixer -t",
+      "on-click-right": "pavucontrol"
+    }
+}

@@ -1,0 +1,89 @@
+{
+    "layer": "top",
+    "spacing": 0,
+    "height": 40,
+    "margin-top": 0,
+    "margin-right": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "memory",
+        "battery",
+        "backlight",
+        "pulseaudio"
+    ],
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "tooltip": false,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": []
+        },
+        "format": "{icon}",
+        "format-icons": {
+            "1": "●",
+            "2": "●",
+            "3": "●",
+            "4": "●",
+            "active": "󰐝",
+            "default": "󰐝",
+            "urgent": "󰐝"
+        },
+        "icon-size": 100
+    },
+    "tray": {
+        "spacing": 0,
+        "tooltip": false,
+        "icon-size": 30,
+        "show-passive-items": false
+    },
+    "clock": {
+        "format": "{:%H:%M - %a, %d %b %Y}",
+        "tooltip": true
+    },
+    "memory": {
+        "format": " {percentage}%",
+        "interval": 1,
+        "states": {
+            "critical": 80
+        }
+    },
+    "battery": {
+        "format": "󰁹 {capacity}%",
+        "interval": 1,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "󰃞 {percent}%",
+        "scroll-step": 5,
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "max-volume": 100,
+        "format": " {volume}%",
+        "format-bluetooth": "vol {volume}%",
+        "nospacing": 1,
+        "on-click": "pwvucontrol",
+        "tooltip": false
+    },
+    "hyprland/language": {
+        "format": "{short}"
+    }
+}

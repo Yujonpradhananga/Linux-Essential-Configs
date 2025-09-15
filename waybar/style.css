@@ -1,0 +1,76 @@
+@import url("file:///home/yujon/.cache/wal/colors-waybar.css");
+* {
+    font-family: "GohuFont 11 Nerd Font Propo";
+    font-size: 20px;
+}
+window#waybar {
+    background-color: transparent;
+    border: none;
+}
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+	color: @color5;
+	background: transparent;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+	color: @color5;
+	background: transparent;
+}
+
+/* Left side - Workspaces container with cylindrical shape */
+#workspaces button {
+  color: @color1;
+  font-size: 100px;
+  background-color: transparent;
+  border: none;
+ 
+}
+#workspaces button.active{
+  background-color: transparent;
+	color: @color5;
+}
+#workspaces button.focused {
+	color: @color5;
+  background-color: @color1;
+}
+#workspaces button.urgent {
+    background-color: @color1;
+    border: 2px solid @color9;
+    color: @foreground;
+}
+/* Center clock */
+#clock {
+    background-color: @color5;
+    color: @background;
+    font-weight: bold;
+    padding: 8px 8px;
+    border-radius: 30px;
+    margin: 5px 5px;
+}
+/* Right side - Simple module indicators */
+#memory,
+#battery,
+#backlight,
+#pulseaudio {
+    color: @background;
+    font-weight: bold;
+    font-size: 20px;
+    padding:5px;
+}
+#memory:hover,
+#battery:hover,
+#backlight:hover,
+#pulseaudio:hover {
+    color: @color3;
+}
+#pulseaudio {
+    margin-right:5px;
+}
+/* States */
+#memory.critical {
+    color: @color1;
+}
+#pulseaudio.muted {
+    color: @foreground;
+}
