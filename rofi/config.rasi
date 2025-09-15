@@ -1,0 +1,89 @@
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+* {
+  font:   "GohuFont 11 Nerd Font Propo 15";
+  bg0     : @background;
+  bg1     : @normal-background;
+  bg2     : @alternate-normal-background;
+  bg3     : @selected-normal-background;
+  fg0     : @normal-foreground;
+  fg1     : @alternate-normal-foreground;
+  fg2     : @selected-normal-foreground;
+  accent: @selected-normal-foreground;
+  urgent: @urgent-foreground;
+  background-color : transparent;
+  text-color       : @fg0;
+  margin  : 0;
+  padding : 0;
+  spacing : 0;
+}
+element-icon, element-text, scrollbar {
+  cursor: pointer;
+}
+window {
+  location : northwest;
+  width    : 30%;
+  height    : 100%;
+  background-color: @bg1;
+  border: 1px;
+  border-color: @bg3;
+  border-radius: 10px;
+}
+inputbar {
+  spacing  : 10px;
+  padding  : 3px 8px;
+  children : [ icon-search, entry ];
+  background-color: @bg0;
+}
+icon-search, entry, element-icon, element-text {
+  vertical-align: 0.5;
+}
+icon-search {
+  expand   : false;
+  filename : "search-symbolic";
+  size     : 15px;
+}
+textbox {
+  padding          : 5px 9px;
+  background-color : @bg2;
+}
+listview {
+  padding      : 5px 0px;
+  lines        : 15;
+  columns      : 1;
+  scrollbar    : true;
+  fixed-height : false;
+  dynamic      : true;
+}
+element {
+  padding : 4px 8px;
+  spacing : 8px;
+  children: [element-icon, element-text];
+}
+element normal urgent {
+  text-color: @urgent;
+}
+element normal active {
+  text-color: @accent;
+}
+element alternate active {
+  text-color: @accent;
+}
+element selected {
+  text-color       : @selected-normal-foreground;
+  background-color : @selected-normal-background;
+}
+element selected urgent {
+  background-color: @urgent-background;
+}
+element-icon {
+  size: 1.2em;
+}
+element-text {
+  text-color: inherit;
+}
+scrollbar {
+  handle-width : 5px;
+  handle-color : @alternate-normal-foreground;
+  padding      : 0 4px;
+}
