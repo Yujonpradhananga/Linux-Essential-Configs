@@ -18,7 +18,10 @@ My personal dotfiles for Arch Linux.
 - **hypr** - Window manager config
 - **qutebrowser** - vim motion browser config
 - **rofi** - application runner
-- **waybar** - top bar, note i have multiple configs here, put any one in the ~/.config/waybar/ directory
+- **Pictures** - wallpaper collection
+- **nvim** - nvim config
+- **wal** - pywal config with a custom starship script
+- **waybar** - top bar, note i have multiple configs here, put any one in the ~/.config/waybar/ directory. Note: i am using the 'shuriken' config here.
   
 ## Usage
 
@@ -28,6 +31,8 @@ Copy the configs to your `~/.config/` directory:
 For dwl, you'll need to compile from source:
 ```bash
 cd dwl/dwl
+sudo make clean install
+cd dwl/dwl/slstatus
 sudo make clean install
 ```
 
